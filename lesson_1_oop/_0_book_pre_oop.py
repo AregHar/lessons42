@@ -41,7 +41,7 @@ def read_through(book: dict) -> None:
 
 # ----- client code -----
 if __name__ == "__main__":
-    from lesson_1_oop.book_dict import (
+    from lesson_1_oop._0_book_pre_oop import (
         create_book,
         read_page,
         turn_the_page,
