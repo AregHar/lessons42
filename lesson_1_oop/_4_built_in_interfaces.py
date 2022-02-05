@@ -37,10 +37,10 @@ print(n == m)
 
 # truthy/falsy values
 if Number(0):
-    print('will not run')
+    print("will not run")
 
 if Number(1):
-    print('will run')
+    print("will run")
 
 
 class Queue:
@@ -91,7 +91,7 @@ class Sentence:
         self._words = text.split()
 
     def __str__(self):
-        return ' '.join(self._words)
+        return " ".join(self._words)
 
     def __iter__(self):
         return iter(self._words)
@@ -109,7 +109,7 @@ class Sentence:
         return len(self._words)
 
     def is_question(self) -> bool:
-        return self._words[-1].endswith('?')
+        return self._words[-1].endswith("?")
 
 
 s = Sentence("This is getting fun!")
@@ -119,7 +119,7 @@ for word in s:
     print(word)
 
 print(s[3])
-s[3] = 'hot'
+s[3] = "hot"
 del s[2]
 print(s)
 
@@ -140,10 +140,10 @@ class SmartMock:
         return self._calls
 
     def __call__(self, *args, **kwargs):
-        self._register_call(f'called with args {args} & kwargs {kwargs}')
+        self._register_call(f"called with args {args} & kwargs {kwargs}")
 
     def __getattr__(self, item):
-        self._register_call(f'accessed attribute {item}')
+        self._register_call(f"accessed attribute {item}")
         return self
 
     # TODO homework

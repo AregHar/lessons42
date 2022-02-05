@@ -7,7 +7,7 @@ from lesson_1_oop._1_book_encapsulation import Book
 
 def book_reader(book: Book):
     print("let's see what book is this {}...")
-    print('Hmm, {}'.format(book.title))
+    print("Hmm, {}".format(book.title))
     book.turn_the_page(1)
 
     book.read_page()

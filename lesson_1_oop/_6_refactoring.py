@@ -25,7 +25,9 @@ class Book:  # reserved keyword -- escaped version are cls, klass, class_
         return self._current_page
 
     # implementation detail
-    def _generate_page(self, ):  # edited
+    def _generate_page(
+        self,
+    ):  # edited
         return "reading {} on page {}".format(self.title, self._current_page)
 
     def read_page(self) -> None:

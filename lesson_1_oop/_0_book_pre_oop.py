@@ -13,11 +13,7 @@ def create_book(title: str, size: int) -> dict:
     if size > 800:
         raise ValueError("A single volume cannot be bigger than 800 pages")
 
-    return {
-        "title": title,
-        "size": size,
-        "current_page": 1
-    }
+    return {"title": title, "size": size, "current_page": 1}
 
 
 def read_page(book: dict) -> None:
@@ -45,7 +41,12 @@ def read_through(book: dict) -> None:
 
 # ----- client code -----
 if __name__ == "__main__":
-    from lesson_1_oop.book_dict import create_book, read_page, turn_the_page, read_through
+    from lesson_1_oop.book_dict import (
+        create_book,
+        read_page,
+        turn_the_page,
+        read_through,
+    )
 
     book = create_book("python tuts", 5)
     # book = create_book("python tuts", 900)
@@ -63,4 +64,3 @@ if __name__ == "__main__":
     # abuse
     book["current_page"] = 42
     read_page(book)  # could raise error
-

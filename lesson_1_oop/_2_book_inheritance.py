@@ -6,10 +6,10 @@ from lesson_1_oop._1_book_encapsulation import Book
 
 
 class Ebook(Book):
-    MAX_SIZE = float('inf')
+    MAX_SIZE = float("inf")
 
     def __init__(self, title: str, size: int):
-        title += ' (digital edition)'
+        title += " (digital edition)"
         super(Ebook, self).__init__(title, size)
 
 

@@ -8,6 +8,7 @@ from lesson_1_oop._1_book_encapsulation import Book
 
 class Mock:
     """Foo doc-line"""
+
     pass
 
 
