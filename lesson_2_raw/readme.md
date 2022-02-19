@@ -1,4 +1,4 @@
-## Lesson 2, The good, the gad, and the ugly
+## Lesson 2, The good, the bad, and the ugly
 
 We write an object-storage library and a config-storage web app. We learn to tell good code from bad code using OOP design principles called SOLID.
 
