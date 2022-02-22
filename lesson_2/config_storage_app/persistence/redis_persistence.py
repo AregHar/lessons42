@@ -11,4 +11,4 @@ class RedisPersistence(Persistence):
         self._redis.set(key, data)
 
     def read(self, key: str) -> str:
-        return self._redis.get(key)
+        return self._redis.get(key).decode("utf-8")
