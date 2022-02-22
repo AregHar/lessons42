@@ -9,19 +9,23 @@ from storage.serializer import JsonSerializer, Serializer
 from storage.persistence import FilePersistence, Persistence
 
 from lesson_2.config_storage_app.serializer.yaml_serializer import YamlSerializer
+from lesson_2.config_storage_app.serializer.toml_serializer import TomlSerializer
 from lesson_2.config_storage_app.persistence.redis_persistence import RedisPersistence
+from lesson_2.config_storage_app.persistence.sqlite_persistence import SQLitePersistence
 
 
 # restrict serializer types down to the accepted values. Better than simple str
 class SerializerType(enum.Enum):
     JSON = "json"
     YAML = "yaml"
+    TOML = "toml"
 
 
 # restrict persistence types down to the accepted values. Better than simple str
 class PersistenceType(enum.Enum):
     FILE = "file"
     REDIS = "redis"
+    SQLITE = "sqlite"
 
 
 # Settings gathers environment variables, loading them in one place.
@@ -41,8 +45,9 @@ def get_persistence() -> Persistence:
         storage_dir = Path("local-storage")
         if not storage_dir.exists():
             storage_dir.mkdir()
-
         return FilePersistence(storage_dir)
+    elif settings.persistence == PersistenceType.SQLITE:
+        return SQLitePersistence()
 
 
 # resolves the serializer dependency
@@ -51,6 +56,8 @@ def get_serializer() -> Serializer:
         return YamlSerializer()
     elif settings.serializer == SerializerType.JSON:
         return JsonSerializer()
+    elif settings.serializer == SerializerType.TOML:
+        return TomlSerializer()
 
 
 # resolves the storage dependency
